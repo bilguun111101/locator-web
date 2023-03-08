@@ -1,7 +1,7 @@
-import React from 'react';
+import { MainSection } from '../components';
 
 export const Main = () => {
   return (
-    <div>Main</div>
+    <MainSection />
   )
 }

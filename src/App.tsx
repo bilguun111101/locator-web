@@ -1,8 +1,7 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Main } from './pages';
 import { Layout } from './components';
 import { DashboardProvider } from './context';
-import { Main } from './pages';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (

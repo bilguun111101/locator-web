@@ -1,17 +1,13 @@
 import { PropsWithChildren } from 'react';
-import { BiPlanet } from "react-icons/bi";
-import { CiSettings } from "react-icons/ci";
-import { RiHome6Line } from "react-icons/ri";
+import { FaIdCard } from "react-icons/fa";
+import { HiChatAlt2 } from 'react-icons/hi'; 
+import { FiMap, FiLogOut } from "react-icons/fi";
 import { DashboardProvider, useDashboard } from '../context';
-import { HiChatAlt2, HiOutlineBell, HiOutlineNewspaper } from 'react-icons/hi';
 
 
 const page_buttons = [
-    { text: "DASHBOARD", icon: <RiHome6Line color='rgb(148 163 184)' size={25} /> },
-    { text: "ALERTS", icon: <HiOutlineBell color='rgb(148 163 184)' size={25} /> },
-    { text: "STUDIO", icon: <BiPlanet color='rgb(148 163 184)' size={25} /> },
-    { text: "REPORTS", icon: <HiOutlineNewspaper color='rgb(148 163 184)' size={25} /> },
-    { text: "SETTINGS", icon: <CiSettings color='rgb(148 163 184)' size={25} /> }
+    { text: "Явц харах", icon: <FiMap color='rgb(255 255 255)' size={25} /> },
+    { text: "Ажилчид", icon: <FaIdCard color='rgb(255 255 255)' size={25} /> }
 ];
 
 type navbarBtn = {
@@ -31,7 +27,7 @@ const NavbarBtn = (props: navbarBtn) => {
     }
     return (
         <button 
-            className={`w-full rounded-lg flex items-center gap-3 px-3 py-2 ${active_button[index] && "backdrop-blur-lg"} opacity-${active_button[index] ? 100 : 70} duration-200`}
+            className={`w-full flex items-center gap-3 px-8 py-2 ${active_button[index] && "backdrop-blur"} ${active_button[index] ? 'opacity-100' : 'opacity-70'} duration-200`}
             style={{ backgroundColor: active_button[index] && 'rgba(255, 255, 255, 0.2)' }}
             onClick={click}
         >
@@ -44,20 +40,27 @@ const NavbarBtn = (props: navbarBtn) => {
 export const Layout = ({ children }: PropsWithChildren) => {
   return (
     <DashboardProvider>
-        <section className='w-full h-screen flex dark:bg-slate-900'>
+        <section className='w-full h-screen flex'>
             {/* navbar */}
-            <div className='w-1/6 relative h-full p-8 overflow-hidden backdrop-blur'>
-                <div className='w-52 h-64 rounded-full absolute bg-gradient-to-t from-violet-500 to-fuchsia-500 blur-2xl z-0' style={{ right: -160, top: 100 }} />
-                <div className='w-52 h-64 rounded-full absolute bg-gradient-to-b from-violet-500 to-fuchsia-500 blur-2xl z-0' style={{ right: 200, top: 300 }} />
-                <div className='w-52 h-64 rounded-full absolute bg-gradient-to-l from-violet-500 to-fuchsia-500 blur-2xl z-0' style={{ right: -100, top: 480 }} />
-                <div className='flex w-full justify-between items-center backdrop-blur-lg z-10'>
+            <div className='w-1/6 relative h-full overflow-hidden backdrop-blur dark:bg-slate-900 pb-8'>
+                <div className='flex w-full justify-between items-center backdrop-blur-lg z-10 pt-8 px-8'>
                     <h2 className='text-base text-slate-300 font-black'>Logo</h2>
                     <button>
                         <HiChatAlt2 color='rgb(148 163 184)' />
                     </button>
                 </div>
-                <div className='mt-20 flex flex-col w-full gap-1'>
-                    { page_buttons.map((el, idx) => <NavbarBtn element={el} key={idx} index={idx} />) }
+                <div className='mt-20 flex flex-col w-full gap-1 h-4/5 relative'>
+                    <div className="w-full">
+                        { page_buttons.map((el, idx) => <NavbarBtn element={el} key={idx} index={idx} />) }
+                    </div>
+                    {/* <NavbarBtn element={{ text: "Гарах", icon: <FiLogOut /> }} /> */}
+                    <button 
+                        className={`w-full flex items-center gap-3 px-8 py-2 active:opacity-70 duration-500 absolute`}
+                        style={{ bottom: 0 }}
+                    >
+                        { <FiLogOut color='rgb(255 255 255)' size={25} /> }
+                        <h3 className='text-xs text-slate-300 font-black'>Гарах</h3>
+                    </button>
                 </div>
             </div>
             { children }
