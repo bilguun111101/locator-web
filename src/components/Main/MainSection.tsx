@@ -1,4 +1,5 @@
 import { AiOutlinePlus } from "react-icons/ai";
+import { ActiveOrNot } from "./Build";
 
 export const MainSection = () => {
   return (
@@ -14,6 +15,7 @@ export const MainSection = () => {
           {/* <div className="w-full gap-3.5">
             <div className=""></div>
           </div> */}
+          <ActiveOrNot />
         </div>
       </div>
     </section>
