@@ -42,7 +42,9 @@ export const Layout = ({ children }: PropsWithChildren) => {
     <DashboardProvider>
         <section className='w-full h-screen flex'>
             {/* navbar */}
-            <div className='w-1/6 relative h-full overflow-hidden backdrop-blur dark:bg-slate-900 pb-8'>
+            <div className='relative h-full overflow-hidden backdrop-blur dark:bg-slate-900 pb-8'
+                style={{ width: 300 }}
+            >
                 <div className='flex w-full justify-between items-center backdrop-blur-lg z-10 pt-8 px-8'>
                     <h2 className='text-base text-slate-300 font-black'>Logo</h2>
                     <button>
