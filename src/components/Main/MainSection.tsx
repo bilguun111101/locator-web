@@ -23,7 +23,7 @@ export const MainSection = () => {
             <ActiveOrNot />
           </div>
         </div>
-        <div className="w-4/6 h-full">
+        <div className="w-full h-full">
           <Map />
         </div>
       </section>
