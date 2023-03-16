@@ -1,9 +1,10 @@
+import { UserData } from "../Types"
+
 export type activeOrNot = {
-    title?: string,
-    data: {
-        name: string,
-        email: string,
-        phone: string,
-        id?: string,
-    }[]
+    title?: string;
+    datas?: UserData[];
+}
+
+export type EmployeeType = {
+    data: UserData;
 }
