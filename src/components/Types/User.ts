@@ -1,5 +1,5 @@
 export type UserData = {
-    id?: string;
+    id?: string
     email?: string;
     firstName?: string;
     imagePath?: string;
@@ -7,7 +7,21 @@ export type UserData = {
     phoneNumber?: string;
     permission?: boolean;
     position?: {
-        latitude?: number;
-        longitude?: number;
+        latitude: number;
+        longitude: number;
+    }
+}
+
+export type User = {
+    id: string;
+    email: string;
+    firstName: string;
+    imagePath: string;
+    lastName: string;
+    phoneNumber: string;
+    permission: boolean;
+    position: {
+        latitude: number;
+        longitude: number;
     }
 }
